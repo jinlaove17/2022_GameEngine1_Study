@@ -1,27 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Study : MonoBehaviour
 {
-    private const float m_attackInterval = 3.0f;
-
-    private float m_attackIntervalTimer;
-
-    private void Update()
+    private void Start()
     {
-        m_attackIntervalTimer += Time.deltaTime;
-
-        if (m_attackIntervalTimer >= 3.0f)
-        {
-            PrintText();
-            m_attackIntervalTimer = 0.0f;
-        }
+        //Update와 다르게 GameObject가 비활성화 상태여도 실행됨
+        //Invoke("PrintText", 3.0f);
+        InvokeRepeating("PrintText", 0.0f, 3.0f);
     }
 
     private void PrintText()
     {
-        print(message: "Attack!");
+        print("Attack!");
     }
 }
