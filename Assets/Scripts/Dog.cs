@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dog : Monster
 {
-    protected override void Cry()
+    public override void Cry()
     {
         print("¸Û¸Û!!");
     }

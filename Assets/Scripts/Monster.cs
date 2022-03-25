@@ -11,5 +11,5 @@ public abstract class Monster : MonoBehaviour
     }
 
     //자식클래스에서 반드시 override 해주어야 함
-    protected abstract void Cry();
+    public abstract void Cry();
 }
