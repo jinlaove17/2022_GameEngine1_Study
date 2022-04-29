@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,18 @@ public class Player : MonoBehaviour
             GameManager.Instance.coin += 1;
             var itemDatas = GameManager.Instance.itemDatabase.itemDatas;
 
-            foreach (var itemData in itemDatas)
+            // Linq - Code Chaining ¹æ½Ä
+            var itemLowerThan3 =
+                itemDatas.Where(item => item.itemLevel < 3)
+                         .Select(item => item.itemName);
+
+                //from item in itemDatas
+                //where item.itemLevel < 3
+                //select item.itemName;
+
+            foreach (var itemName in itemLowerThan3)
             {
-                print($"{itemData.itemName}: LV.{itemData.itemLevel}");
+                print(itemName);
             }
         }
     }
