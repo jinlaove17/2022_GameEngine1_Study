@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57680bac602d61d46b2cf595b6691106, type: 3}
+  m_Name: Item Database
+  m_EditorClassIdentifier: 
+  itemDatas:
+  - itemName: Sword
+    itemLevel: 1
+    itemThumbnail: {fileID: 0}
+  - itemName: Armor
+    itemLevel: 1
+    itemThumbnail: {fileID: 0}
+  - itemName: Shoes
+    itemLevel: 1
+    itemThumbnail: {fileID: 0}

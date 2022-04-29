@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
 
     public int coin;
+    public ItemDatabase itemDatabase;
 
     public static GameManager Instance
     {
