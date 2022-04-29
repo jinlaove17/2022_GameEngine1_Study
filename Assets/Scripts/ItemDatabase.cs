@@ -17,3 +17,9 @@ public class ItemData
 
     public Sprite itemThumbnail;
 }
+
+[Serializable]
+public class SwordData : ItemData
+{
+    public float attackPower;
+}

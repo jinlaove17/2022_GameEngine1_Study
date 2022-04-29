@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatas:
   - itemName: Sword
-    itemLevel: 1
+    itemLevel: 2
     itemThumbnail: {fileID: 0}
   - itemName: Armor
     itemLevel: 1
     itemThumbnail: {fileID: 0}
   - itemName: Shoes
-    itemLevel: 1
+    itemLevel: 3
     itemThumbnail: {fileID: 0}

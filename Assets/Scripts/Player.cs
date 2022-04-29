@@ -12,18 +12,50 @@ public class Player : MonoBehaviour
             GameManager.Instance.coin += 1;
             var itemDatas = GameManager.Instance.itemDatabase.itemDatas;
 
-            // Linq - Code Chaining 방식
-            var itemLowerThan3 =
-                itemDatas.Where(item => item.itemLevel < 3)
-                         .Select(item => item.itemName);
+            //if (itemDatas.Any(item => item.itemLevel > 1))
+            //{
+            //    print("2레벨 이상의 아이템을 보유하고 있습니다.");
+            //}
 
-                //from item in itemDatas
-                //where item.itemLevel < 3
-                //select item.itemName;
+            //var sword = itemDatas.FirstOrDefault(item => item.itemName == "Sword");
 
-            foreach (var itemName in itemLowerThan3)
+            //if (sword != null)
+            //{
+            //    print(sword.itemName + ": Lv." + sword.itemLevel);
+            //}
+            //else
+            //{
+            //    print("존재하지 않는 아이템입니다.");
+            //}
+
+            // 정렬 해보기
+            //var itemDatasOrderedByLevel =
+            //    itemDatas.OrderBy(item => item.itemLevel);
+
+            //foreach (var itemData in itemDatasOrderedByLevel)
+            //{
+            //    print(itemData.itemName);
+            //}
+
+            // 앞, 뒤 객체 합병 해보기
+            //var itemNames = itemDatas
+            //    .Select(item => item.itemName)  
+            //    .Aggregate((before, after) => { return before + ", " + after; });
+
+            //print(itemNames);
+
+            var swordDatas = itemDatas
+                .Where(item => item.itemName.Contains("Sword"))
+                .Select(item => new SwordData
+                {
+                    itemName = item.itemName,
+                    itemLevel = item.itemLevel,
+                    attackPower = 10 * item.itemLevel
+                });
+
+            foreach (var sword in swordDatas)
             {
-                print(itemName);
+                print(sword.itemName + ": Power " + sword.attackPower);
             }
         }
     }
