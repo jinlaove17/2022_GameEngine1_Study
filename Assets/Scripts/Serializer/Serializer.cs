@@ -22,15 +22,13 @@ public class Serializer : MonoBehaviour
         data.someDictionary.Add("Hi", 10);
 
         string jsonString = JsonConvert.SerializeObject(data);
+        string filePath = Path.Combine(Application.persistentDataPath, "save.json");
 
-        // using scope 안에서 파일 스트림을 열면, 별도로 닫을 필요가 없다.
-        using (FileStream fileStream = new FileStream(Path.Combine(Application.persistentDataPath, "save.json"), FileMode.Create))
-        {
-            byte[] jsonToBytes = Encoding.UTF8.GetBytes(jsonString);
+        //File.WriteAllText(filePath, jsonString);
 
-            fileStream.Write(jsonToBytes);
-        }
+        string loadedJson = File.ReadAllText(filePath);
+        Data loadedData = JsonConvert.DeserializeObject<Data>(loadedJson);
 
-        print(jsonString);
+        print(loadedData.dataName);
     }
 }
